@@ -1,63 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My PDF Viewer</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 20px;
-            background-color: #f4f4f4;
-        }
-        .container {
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-            border: 1px solid #ddd;
-            margin-top: 20px;
-        }
-        /* Styling to make the button big and easy to tap on a phone */
-        .read-button {
-            display: block;
-            width: 100%;
-            padding: 15px;
-            margin: 10px 0;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-    </style>
+    <meta http-equiv="refresh" content="0; url=https://docs.google.com/viewer?url=https://trivialkrishna-commits.github.io/e-Reader/">
+    <title>Loading PDF...</title>
 </head>
 <body>
-    <div class="container">
-        <h2>My Library</h2>
-        <p>Tap a button below to read:</p>
-
-        <button class="read-button" onclick="openHostedPdf('NEET DPP 15- Torque and MOI.pdf')">Read Book 1</button>
-        
-        </div>
-
+    <p>Loading PDF... If it doesn't open, <a href="https://docs.google.com/viewer?url=https://trivialkrishna-commits.github.io/e-Reader/">click here</a>.</p>
+    
     <script>
-        function openHostedPdf(filename) {
-            // This grabs your current GitHub website address automatically
-            var currentWebsite = window.location.href.split('?')[0].replace('index.html', '');
-            if (!currentWebsite.endsWith('/')) { 
-                currentWebsite += '/'; 
-            }
-            
-            // This combines your website address with the PDF name
-            var fullPdfLink = currentWebsite + filename;
-
-            // This sends it to Google's lightweight viewer
-            var googleViewerUrl = "https://docs.google.com/viewer?url=" + encodeURIComponent(fullPdfLink);
-            window.location.href = googleViewerUrl;
-        }
+        // Backup method in case the line above fails
+        window.location.replace("https://docs.google.com/viewer?url=https://trivialkrishna-commits.github.io/e-Reader/");
     </script>
 </body>
 </html>
