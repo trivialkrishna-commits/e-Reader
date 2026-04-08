@@ -2,125 +2,12 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {
-  margin: 20px;
-  font-family: sans-serif;
-  font-size: 22px;
-  line-height: 1.6;
-  background: #f4ecd8;
-  color: #000;
-}
-
-#content {
-  margin-bottom: 80px;
-}
-
-#controls {
-  position: fixed;
-  bottom: 10px;
-  width: 100%;
-  text-align: center;
-}
-
-button {
-  font-size: 16px;
-  padding: 8px;
-  margin: 2px;
-}
-</style>
 </head>
 
 <body>
 
-<div id="content">Loading book...</div>
-
-<div id="controls">
-  <button onclick="prevPage()">Prev</button>
-  <button onclick="nextPage()">Next</button>
-  <br>
-  <button onclick="increaseFont()">A+</button>
-  <button onclick="decreaseFont()">A-</button>
-  <br>
-  <button onclick="setTheme('black')">Black</button>
-  <button onclick="setTheme('grey')">Grey</button>
-  <button onclick="setTheme('sepia')">Sepia</button>
-</div>
-
-<script>
-var pages = [];
-var current = 0;
-var fontSize = 22;
-
-function loadBook() {
-  var xhr = new XMLHttpRequest();
-  xhr.open("GET", "book.txt", true);
-
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState === 4 && xhr.status === 200) {
-      var text = xhr.responseText;
-
-      var words = text.split(" ");
-      var pageSize = 120;
-
-      for (var i = 0; i < words.length; i += pageSize) {
-        pages.push(words.slice(i, i + pageSize).join(" "));
-      }
-
-      showPage();
-    }
-  };
-
-  xhr.send();
-}
-
-function showPage() {
-  if (pages.length > 0) {
-    document.getElementById("content").innerText = pages[current];
-  }
-}
-
-function nextPage() {
-  if (current < pages.length - 1) {
-    current++;
-    showPage();
-  }
-}
-
-function prevPage() {
-  if (current > 0) {
-    current--;
-    showPage();
-  }
-}
-
-function increaseFont() {
-  fontSize += 2;
-  document.body.style.fontSize = fontSize + "px";
-}
-
-function decreaseFont() {
-  if (fontSize > 14) {
-    fontSize -= 2;
-    document.body.style.fontSize = fontSize + "px";
-  }
-}
-
-function setTheme(mode) {
-  if (mode === 'black') {
-    document.body.style.background = "#000";
-    document.body.style.color = "#fff";
-  } else if (mode === 'grey') {
-    document.body.style.background = "#888";
-    document.body.style.color = "#000";
-  } else {
-    document.body.style.background = "#f4ecd8";
-    document.body.style.color = "#000";
-  }
-}
-
-loadBook();
-</script>
+<h3>Open Book</h3>
+<a href="book.pdf">Tap here to open PDF</a>
 
 </body>
 </html>
